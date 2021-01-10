@@ -7660,8 +7660,8 @@ if text == ("تحديث السورس") and DevEvelyn(msg) then
 send(msg.chat_id_,msg.id_,'*⌔∮ تم التحديث السورس*')
 os.execute('rm -rf Evelyn.lua')
 os.execute('rm -rf start.lua')
-os.execute('wget https://raw.githubusercontent.com/EvelynTele/Evelyn/master/Evelyn.lua')
-os.execute('wget https://raw.githubusercontent.com/EvelynTele/Evelyn/master/start.lua')
+os.execute('wget https://raw.githubusercontent.com/DevArmof/Evelyn/master/Evelyn.lua')
+os.execute('wget https://raw.githubusercontent.com/DevArmof/Evelyn/master/start.lua')
 dofile('Evelyn.lua')  
 return false
 end
@@ -7828,7 +7828,7 @@ send(msg.chat_id_, msg.id_,t)
 end
 if text == "متجر الملفات" or text == 'المتجر' then
 if DevEvelyn(msg) then
-local Get_Files, res = https.request("https://raw.githubusercontent.com/EvelynTele/files_Evelyn/master/getfile.json")
+local Get_Files, res = https.request("https://raw.githubusercontent.com/DevArmof/files_Evelyn/master/getfile.json")
 if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
@@ -7866,7 +7866,7 @@ t = "*⌔∮  الملف -› {"..file.."}\n⌔∮  تم تعطيله وحذفه
 else
 t = "*⌔∮  بالتاكيد تم تعطيل وحذف ملف \n⌔∮  الملف -› {"..file.."} \n√*"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/EvelynTele/files_Evelyn/master/files_Evelyn/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/DevArmof/files_Evelyn/master/files_Evelyn/"..file)
 if res == 200 then
 os.execute("rm -fr Evelyn_Files/"..file)
 send(msg.chat_id_, msg.id_,t) 
@@ -7886,7 +7886,7 @@ t = "*⌔∮  بالتاكيد تم تنزيل وتفعيل ملف \n⌔∮ ال
 else
 t = "*⌔∮  الملف -› {"..file.."}\n⌔∮  تم تنزيله وتفعيله بنجاح \n√*"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/EvelynTele/files_Evelyn/master/files_Evelyn/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/DevArmof/files_Evelyn/master/files_Evelyn/"..file)
 if res == 200 then
 local chek = io.open("Evelyn_Files/"..file,'w+')
 chek:write(json_file)
@@ -9002,8 +9002,8 @@ if text == "تحديث السورس ⚙️" then
 send(msg.chat_id_,msg.id_,'*⌔∮ تم تحديث السورس*')
 os.execute('rm -rf Evelyn.lua')
 os.execute('rm -rf start.lua')
-os.execute('wget https://raw.githubusercontent.com/EvelynTele/Evelyn/master/Evelyn.lua')
-os.execute('wget https://raw.githubusercontent.com/EvelynTele/Evelyn/master/start.lua')
+os.execute('wget https://raw.githubusercontent.com/DevArmof/Evelyn/master/Evelyn.lua')
+os.execute('wget https://raw.githubusercontent.com/DevArmof/Evelyn/master/start.lua')
 dofile('Evelyn.lua')  
 return false
 end

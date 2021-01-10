@@ -71,7 +71,7 @@ RunEvelyn:write([[
 cd $HOME/Evelyn
 token="]]..database:get(Server_Evelyn.."Token_Evelyn")..[["
 rm -fr Evelyn.lua
-wget "https://raw.githubusercontent.com/EvelynTele/Evelyn/master/Evelyn.lua"
+wget "https://raw.githubusercontent.com/DevArmof/Evelyn/master/Evelyn.lua"
 while(true) do
 rm -fr ../.telegram-cli
 ./tg -s ./Evelyn.lua -p PROFILE --bot=$token
