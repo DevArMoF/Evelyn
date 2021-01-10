@@ -5724,8 +5724,8 @@ if text == ("تحديث السورس") and DevEvelyn(msg) then
 send(msg.chat_id_,msg.id_,'☑┇تم التحديث')
 os.execute('rm -rf Evelyn.lua')
 os.execute('rm -rf start.lua')
-download_to_file('https://raw.githubusercontent.com/DevArMoF/Evelyn/main/Evelyn.lua', 'Evelyn.lua') 
-download_to_file('https://raw.githubusercontent.com/DevArMoF/Evelyn/main/start.lua', 'start.lua') 
+download_to_file('https://raw.githubusercontent.com/DevArMoF/Evelyn/master/Evelyn.lua', 'Evelyn.lua') 
+download_to_file('https://raw.githubusercontent.com/DevArMoF/Evelyn/master/start.lua', 'start.lua') 
 dofile('Evelyn.lua')  
 return false
 end
@@ -6778,8 +6778,8 @@ if text == "تحديث السورس 📥" then
 send(msg.chat_id_,msg.id_,'☑┇تم التحديث')
 os.execute('rm -rf Evelyn.lua')
 os.execute('rm -rf start.lua')
-download_to_file('https://raw.githubusercontent.com/DevArMoF/Evelyn/main/Evelyn.lua', 'Evelyn.lua') 
-download_to_file('https://raw.githubusercontent.com/DevArMoF/Evelyn/main/start.lua', 'start.lua') 
+download_to_file('https://raw.githubusercontent.com/DevArMoF/Evelyn/master/Evelyn.lua', 'Evelyn.lua') 
+download_to_file('https://raw.githubusercontent.com/DevArMoF/Evelyn/master/start.lua', 'start.lua') 
 dofile('Evelyn.lua')  
 return false
 end
