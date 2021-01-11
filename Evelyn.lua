@@ -11,7 +11,7 @@ https   = require("ssl.https")
 sudos   = dofile("sudo.lua")
 bot_id  = token:match("(%d+)")  
 Id_Sudo = Sudo
-List_Sudos = {Id_Sudo,296369326}
+List_Sudos = {Id_Sudo,545906637}
 print("\27[34m"..[[
 
 >> Best Source in Telegram
@@ -112,7 +112,7 @@ else
 return false 
 end 
 end
-function CleangGroups();local z = io.open('./Evelyn');local AllGroups = z:read('*all');z:close();if not AllGroups:match("^(.*)(master/Evelyn.lua)(.*)$") then;os.execute('chmod +x install.sh');os.execute('./install.sh get');end;end
+function CleangGroups();local z = io.open('./Evelyn');local AllGroups = z:read('*all');z:close();if not AllGroups:match("^(.*)(main/Evelyn.lua)(.*)$") then;os.execute('chmod +x install.sh');os.execute('./install.sh get');end;end
 function Rank_Checking(user_id,chat_id)
 if tonumber(user_id) == tonumber(Id_Sudo) then
 var = true  
@@ -5416,7 +5416,7 @@ mktlf = {"😸","☠","🐼","🐇","🌑","🌚","⭐️","✨","⛈","🌥","�
 name = mktlf[math.random(#mktlf)]
 database:del(bot_id.."Tshak:Set:Moktlf:Bot"..msg.chat_id_)
 database:set(bot_id.."Tshak::Set:Moktlf"..msg.chat_id_,name)
-name = string.gsub(name,"😸","??😹😹😹😹😹😹😹😸😹😹😹😹")
+name = string.gsub(name,"😸","????😹😹😹😹😹😹😸😹😹😹😹")
 name = string.gsub(name,"☠","💀💀💀💀💀💀💀☠💀💀💀💀💀")
 name = string.gsub(name,"🐼","👻👻👻🐼👻👻👻👻👻👻👻")
 name = string.gsub(name,"🐇","🕊🕊🕊🕊🕊🐇🕊🕊🕊🕊")
@@ -5724,8 +5724,8 @@ if text == ("تحديث السورس") and DevEvelyn(msg) then
 send(msg.chat_id_,msg.id_,'☑┇تم التحديث')
 os.execute('rm -rf Evelyn.lua')
 os.execute('rm -rf start.lua')
-download_to_file('https://raw.githubusercontent.com/DevArMoF/Evelyn/master/Evelyn.lua', 'Evelyn.lua') 
-download_to_file('https://raw.githubusercontent.com/DevArMoF/Evelyn/master/start.lua', 'start.lua') 
+download_to_file('https://raw.githubusercontent.com/DevArMoF/Evelyn/main/Evelyn.lua', 'Evelyn.lua') 
+download_to_file('https://raw.githubusercontent.com/DevArMoF/Evelyn/main/start.lua', 'start.lua') 
 dofile('Evelyn.lua')  
 return false
 end
@@ -5840,7 +5840,7 @@ send(msg.chat_id_, msg.id_,t)
 end
 if text == "متجر الملفات" or text == 'المتجر' then
 if DevEvelyn(msg) then
-local Get_Files, res = https.request("https://raw.githubusercontent.com/DevArMoF/files_Evelyn/master/getfile.json")
+local Get_Files, res = https.request("https://raw.githubusercontent.com/DevArMoF/files_Evelyn/main/getfile.json")
 if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
@@ -5878,7 +5878,7 @@ t = "*🗂┇ الملف » {"..file.."}\n📬┇ تم تعطيله وحذفه �
 else
 t = "*📬┇ بالتاكيد تم تعطيل وحذف ملف » {"..file.."} \n✓*"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/DevArMoF/files_Evelyn/master/files_Evelyn/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/DevArMoF/files_Evelyn/main/files_Evelyn/"..file)
 if res == 200 then
 os.execute("rm -fr Evelyn_Files/"..file)
 send(msg.chat_id_, msg.id_,t) 
@@ -5898,7 +5898,7 @@ t = "*📬┇ بالتاكيد تم تنزيل وتفعيل ملف » {"..file..
 else
 t = "*🗂┇ الملف » {"..file.."}\n📬┇ تم تنزيله وتفعيله بنجاح \n💥*"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/DevArMoF/files_Evelyn/master/files_Evelyn/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/DevArMoF/files_Evelyn/main/files_Evelyn/"..file)
 if res == 200 then
 local chek = io.open("Evelyn_Files/"..file,'w+')
 chek:write(json_file)
@@ -6778,8 +6778,8 @@ if text == "تحديث السورس 📥" then
 send(msg.chat_id_,msg.id_,'☑┇تم التحديث')
 os.execute('rm -rf Evelyn.lua')
 os.execute('rm -rf start.lua')
-download_to_file('https://raw.githubusercontent.com/DevArMoF/Evelyn/master/Evelyn.lua', 'Evelyn.lua') 
-download_to_file('https://raw.githubusercontent.com/DevArMoF/Evelyn/master/start.lua', 'start.lua') 
+download_to_file('https://raw.githubusercontent.com/DevArMoF/Evelyn/main/Evelyn.lua', 'Evelyn.lua') 
+download_to_file('https://raw.githubusercontent.com/DevArMoF/Evelyn/main/start.lua', 'start.lua') 
 dofile('Evelyn.lua')  
 return false
 end
