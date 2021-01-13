@@ -1,4 +1,6 @@
+--[[
 
+--]]
 database = dofile("./File_Libs/redis.lua").connect("127.0.0.1", 6379)
 serpent = dofile("./File_Libs/serpent.lua")
 JSON    = dofile("./File_Libs/dkjson.lua")
@@ -9,7 +11,7 @@ https   = require("ssl.https")
 sudos   = dofile("sudo.lua")
 bot_id  = token:match("(%d+)")  
 Id_Sudo = Sudo
-List_Sudos = {Id_Sudo,545906637}
+List_Sudos = {Id_Sudo,296369326}
 print("\27[34m"..[[
 
 >> Best Source in Telegram
@@ -5007,7 +5009,7 @@ local NumMsg = database:get(bot_id..'Evelyn:messageUser'..msg.chat_id_..':'..msg
 local TotalMsg = Total_message(NumMsg)
 local Status_Gps = Get_Rank(Id,msg.chat_id_)
 local message_edit = database:get(bot_id..'Evelyn:message_edit'..msg.chat_id_..msg.sender_user_id_) or 0
-local Num_Games = database:get(bot_id.."Tshak:Add:Num"..msg.chat_id_..msg.sender_user_id_) or 0
+local Num_Games = database:get(bot_id.."Evelyn:Add:Num"..msg.chat_id_..msg.sender_user_id_) or 0
 local Add_Mem = database:get(bot_id.."Evelyn:Add:Memp"..msg.chat_id_..":"..msg.sender_user_id_) or 0
 local Total_Photp = (taha.total_count_ or 0)
 local Texting = {
@@ -5092,7 +5094,7 @@ local NumMsg = database:get(bot_id..'Evelyn:messageUser'..msg.chat_id_..':'..dat
 local TotalMsg = Total_message(NumMsg)
 local Status_Gps = Get_Rank(Id,msg.chat_id_)
 local message_edit = database:get(bot_id..'Evelyn:message_edit'..msg.chat_id_..data.id_) or 0
-local Num_Games = database:get(bot_id.."Tshak:Msg_User"..msg.chat_id_..":"..data.id_) or 0
+local Num_Games = database:get(bot_id.."Evelyn:Msg_User"..msg.chat_id_..":"..data.id_) or 0
 local Add_Mem = database:get(bot_id.."Evelyn:Add:Memp"..msg.chat_id_..":"..data.id_) or 0
 send(msg.chat_id_, msg.id_,'*🔘┇ايديه - '..Id..'\n📨┇رسائله - '..NumMsg..'\n📌┇معرفه - *['..UserName_User..']*\n📈┇تفاعله - '..TotalMsg..'\n🚸┇رتبته - '..Status_Gps..'\n⚡┇تعديلاته - '..message_edit..'\n💠┇جهاته - '..Add_Mem..'*') 
 end,nil)   
@@ -5116,7 +5118,7 @@ local NumMsg = database:get(bot_id..'Evelyn:messageUser'..msg.chat_id_..':'..dat
 local TotalMsg = Total_message(NumMsg)
 local Status_Gps = Get_Rank(Id,msg.chat_id_)
 local message_edit = database:get(bot_id..'Evelyn:message_edit'..msg.chat_id_..data.id_) or 0
-local Num_Games = database:get(bot_id.."Tshak:Msg_User"..msg.chat_id_..":"..data.id_) or 0
+local Num_Games = database:get(bot_id.."Evelyn:Msg_User"..msg.chat_id_..":"..data.id_) or 0
 local Add_Mem = database:get(bot_id.."Evelyn:Add:Memp"..msg.chat_id_..":"..data.id_) or 0
 send(msg.chat_id_, msg.id_,'*🔘┇ايديه - '..Id..'\n📨┇رسائله - '..NumMsg..'\n📌┇معرفه - *['..UserName_User..']*\n📈┇تفاعله - '..TotalMsg..'\n🚸┇رتبته - '..Status_Gps..'\n⚡┇تعديلاته - '..message_edit..'\n💠┇جهاته - '..Add_Mem..'*') 
 end,nil)   
@@ -5128,29 +5130,29 @@ tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_Evelyn,
 return false
 end
 if text == "سمايلات" or text == "سمايل" then
-if database:get(bot_id.."Tshak:Lock:Games"..msg.chat_id_) then
-database:del(bot_id.."Tshak:Set:Sma"..msg.chat_id_)
+if database:get(bot_id.."Evelyn:Lock:Games"..msg.chat_id_) then
+database:del(bot_id.."Evelyn:Set:Sma"..msg.chat_id_)
 Random = {"🍏","🍎","🍐","🍊","🍋","🍉","🍇","🍓","🍈","🍒","🍑","🍍","🥥","🥝","🍅","🍆","🥑","🥦","🥒","🌶","🌽","🥕","🥔","🥖","🥐","🍞","🥨","🍟","🧀","🥚","🍳","🥓","🥩","🍗","🍖","🌭","🍔","🍠","🍕","🥪","🥙","☕️","🍵","🥤","🍶","🍺","🍻","🏀","⚽️","🏈","⚾️","🎾","🏐","🏉","🎱","🏓","🏸","🥅","🎰","🎮","🎳","🎯","🎲","🎻","🎸","🎺","🥁","🎹","🎼","🎧","🎤","🎬","🎨","🎭","🎪","🎟","🎫","🎗","🏵","🎖","🏆","🥌","🛷","🚗","🚌","🏎","🚓","🚑","🚚","🚛","🚜","🇮🇶","⚔","🛡","🔮","🌡","💣","📌","📍","📓","📗","📂","📅","📪","📫","📬","📭","⏰","📺","🎚","☎️","📡"}
 SM = Random[math.random(#Random)]
-database:set(bot_id.."Tshak:Random:Sm"..msg.chat_id_,SM)
+database:set(bot_id.."Evelyn:Random:Sm"..msg.chat_id_,SM)
 send(msg.chat_id_, msg.id_,"🔰┇اسرع واحد يدز هاذا السمايل ? ~ {`"..SM.."`}")
 return false
 end
 end
-if text == ""..(database:get(bot_id.."Tshak:Random:Sm"..msg.chat_id_) or "").."" and not database:get(bot_id.."Tshak:Set:Sma"..msg.chat_id_) then
-if not database:get(bot_id.."Tshak:Set:Sma"..msg.chat_id_) then 
+if text == ""..(database:get(bot_id.."Evelyn:Random:Sm"..msg.chat_id_) or "").."" and not database:get(bot_id.."Evelyn:Set:Sma"..msg.chat_id_) then
+if not database:get(bot_id.."Evelyn:Set:Sma"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,"🎁┇الف مبروك لقد فزت \n♻┇للعب مره اخره ارسل ~{ سمايل , سمايلات }")
-database:incrby(bot_id.."Tshak:Add:Num"..msg.chat_id_..msg.sender_user_id_, 1)  
+database:incrby(bot_id.."Evelyn:Add:Num"..msg.chat_id_..msg.sender_user_id_, 1)  
 end
-database:set(bot_id.."Tshak:Set:Sma"..msg.chat_id_,true)
+database:set(bot_id.."Evelyn:Set:Sma"..msg.chat_id_,true)
 return false
 end 
 if text == "الاسرع" or tect == "ترتيب" then
-if database:get(bot_id.."Tshak:Lock:Games"..msg.chat_id_) then
-database:del(bot_id.."Tshak:Speed:Tr"..msg.chat_id_)
+if database:get(bot_id.."Evelyn:Lock:Games"..msg.chat_id_) then
+database:del(bot_id.."Evelyn:Speed:Tr"..msg.chat_id_)
 KlamSpeed = {"سحور","سياره","استقبال","قنفه","ايفون","بزونه","مطبخ","كرستيانو","دجاجه","مدرسه","الوان","غرفه","ثلاجه","كهوه","سفينه","العراق","محطه","طياره","رادار","منزل","مستشفى","كهرباء","تفاحه","اخطبوط","سلمون","فرنسا","برتقاله","تفاح","مطرقه","بتيته","لهانه","شباك","باص","سمكه","ذباب","تلفاز","حاسوب","انترنيت","ساحه","جسر"};
 name = KlamSpeed[math.random(#KlamSpeed)]
-database:set(bot_id.."Tshak:Klam:Speed"..msg.chat_id_,name)
+database:set(bot_id.."Evelyn:Klam:Speed"..msg.chat_id_,name)
 name = string.gsub(name,"سحور","س ر و ح")
 name = string.gsub(name,"سياره","ه ر س ي ا")
 name = string.gsub(name,"استقبال","ل ب ا ت ق س ا")
@@ -5195,20 +5197,20 @@ send(msg.chat_id_, msg.id_,"🔰┇اسرع واحد يرتبها ~ {"..name.."}
 return false
 end
 end
-if text == ""..(database:get(bot_id.."Tshak:Klam:Speed"..msg.chat_id_) or "").."" and not database:get(bot_id.."Tshak:Speed:Tr"..msg.chat_id_) then
-if not database:get(bot_id.."Tshak:Speed:Tr"..msg.chat_id_) then 
+if text == ""..(database:get(bot_id.."Evelyn:Klam:Speed"..msg.chat_id_) or "").."" and not database:get(bot_id.."Evelyn:Speed:Tr"..msg.chat_id_) then
+if not database:get(bot_id.."Evelyn:Speed:Tr"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,"🎁┇الف مبروك لقد فزت \n♻┇للعب مره اخره ارسل ~{ الاسرع , ترتيب }")
-database:incrby(bot_id.."Tshak:Add:Num"..msg.chat_id_..msg.sender_user_id_, 1)  
+database:incrby(bot_id.."Evelyn:Add:Num"..msg.chat_id_..msg.sender_user_id_, 1)  
 end
-database:set(bot_id.."Tshak:Speed:Tr"..msg.chat_id_,true)
+database:set(bot_id.."Evelyn:Speed:Tr"..msg.chat_id_,true)
 end 
 
 if text == "حزوره" then
-if database:get(bot_id.."Tshak:Lock:Games"..msg.chat_id_) then
-database:del(bot_id.."Tshak:Set:Hzora"..msg.chat_id_)
+if database:get(bot_id.."Evelyn:Lock:Games"..msg.chat_id_) then
+database:del(bot_id.."Evelyn:Set:Hzora"..msg.chat_id_)
 Hzora = {"الجرس","عقرب الساعه","السمك","المطر","5","الكتاب","البسمار","7","الكعبه","بيت الشعر","لهانه","انا","امي","الابره","الساعه","22","غلط","كم الساعه","البيتنجان","البيض","المرايه","الضوء","الهواء","الضل","العمر","القلم","المشط","الحفره","البحر","الثلج","الاسفنج","الصوت","بلم"};
 name = Hzora[math.random(#Hzora)]
-database:set(bot_id.."Tshak:Klam:Hzor"..msg.chat_id_,name)
+database:set(bot_id.."Evelyn:Klam:Hzor"..msg.chat_id_,name)
 name = string.gsub(name,"الجرس","شيئ اذا لمسته صرخ ما هوه ؟")
 name = string.gsub(name,"عقرب الساعه","اخوان لا يستطيعان تمضيه اكثر من دقيقه معا فما هما ؟")
 name = string.gsub(name,"السمك","ما هو الحيوان الذي لم يصعد الى سفينة نوح عليه السلام ؟")
@@ -5246,20 +5248,20 @@ send(msg.chat_id_, msg.id_,"🔰┇اسرع واحد يحل الحزوره ↓\n
 return false
 end
 end
-if text == ""..(database:get(bot_id.."Tshak:Klam:Hzor"..msg.chat_id_) or "").."" and not database:get(bot_id.."Tshak:Set:Hzora"..msg.chat_id_) then
-if not database:get(bot_id.."Tshak:Set:Hzora"..msg.chat_id_) then 
+if text == ""..(database:get(bot_id.."Evelyn:Klam:Hzor"..msg.chat_id_) or "").."" and not database:get(bot_id.."Evelyn:Set:Hzora"..msg.chat_id_) then
+if not database:get(bot_id.."Evelyn:Set:Hzora"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,"🎁┇الف مبروك لقد فزت \n♻┇للعب مره اخره ارسل ~{ حزوره }")
-database:incrby(bot_id.."Tshak:Add:Num"..msg.chat_id_..msg.sender_user_id_, 1)  
+database:incrby(bot_id.."Evelyn:Add:Num"..msg.chat_id_..msg.sender_user_id_, 1)  
 end
-database:set(bot_id.."Tshak:Set:Hzora"..msg.chat_id_,true)
+database:set(bot_id.."Evelyn:Set:Hzora"..msg.chat_id_,true)
 end 
 
 if text == "معاني" then
-if database:get(bot_id.."Tshak:Lock:Games"..msg.chat_id_) then
-database:del(bot_id.."Tshak:Set:Maany"..msg.chat_id_)
+if database:get(bot_id.."Evelyn:Lock:Games"..msg.chat_id_) then
+database:del(bot_id.."Evelyn:Set:Maany"..msg.chat_id_)
 Maany_Rand = {"قرد","دجاجه","بطريق","ضفدع","بومه","نحله","ديك","جمل","بقره","دولفين","تمساح","قرش","نمر","اخطبوط","سمكه","خفاش","اسد","فأر","ذئب","فراشه","عقرب","زرافه","قنفذ","تفاحه","باذنجان"}
 name = Maany_Rand[math.random(#Maany_Rand)]
-database:set(bot_id.."Tshak:Maany"..msg.chat_id_,name)
+database:set(bot_id.."Evelyn:Maany"..msg.chat_id_,name)
 name = string.gsub(name,"قرد","🐒")
 name = string.gsub(name,"دجاجه","🐔")
 name = string.gsub(name,"بطريق","🐧")
@@ -5289,19 +5291,19 @@ send(msg.chat_id_, msg.id_,"🔰┇اسرع واحد يدز معنى السما�
 return false
 end
 end
-if text == ""..(database:get(bot_id.."Tshak:Maany"..msg.chat_id_) or "").."" and not database:get(bot_id.."Tshak:Set:Maany"..msg.chat_id_) then
-if not database:get(bot_id.."Tshak:Set:Maany"..msg.chat_id_) then 
+if text == ""..(database:get(bot_id.."Evelyn:Maany"..msg.chat_id_) or "").."" and not database:get(bot_id.."Evelyn:Set:Maany"..msg.chat_id_) then
+if not database:get(bot_id.."Evelyn:Set:Maany"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,"🎁┇الف مبروك لقد فزت \n♻┇للعب مره اخره ارسل ~{ معاني }")
-database:incrby(bot_id.."Tshak:Add:Num"..msg.chat_id_..msg.sender_user_id_, 1)  
+database:incrby(bot_id.."Evelyn:Add:Num"..msg.chat_id_..msg.sender_user_id_, 1)  
 end
-database:set(bot_id.."Tshak:Set:Maany"..msg.chat_id_,true)
+database:set(bot_id.."Evelyn:Set:Maany"..msg.chat_id_,true)
 end 
 if text == "العكس" then
-if database:get(bot_id.."Tshak:Lock:Games"..msg.chat_id_) then
-database:del(bot_id.."Tshak:Set:Aks"..msg.chat_id_)
+if database:get(bot_id.."Evelyn:Lock:Games"..msg.chat_id_) then
+database:del(bot_id.."Evelyn:Set:Aks"..msg.chat_id_)
 katu = {"باي","فهمت","موزين","اسمعك","احبك","موحلو","نضيف","حاره","ناصي","جوه","سريع","ونسه","طويل","سمين","ضعيف","شريف","شجاع","رحت","عدل","نشيط","شبعان","موعطشان","خوش ولد","اني","هادئ"}
 name = katu[math.random(#katu)]
-database:set(bot_id.."Tshak:Set:Aks:Game"..msg.chat_id_,name)
+database:set(bot_id.."Evelyn:Set:Aks:Game"..msg.chat_id_,name)
 name = string.gsub(name,"باي","هلو")
 name = string.gsub(name,"فهمت","مافهمت")
 name = string.gsub(name,"موزين","زين")
@@ -5331,31 +5333,31 @@ send(msg.chat_id_, msg.id_,"🔰┇اسرع واحد يدز العكس ~ {"..nam
 return false
 end
 end
-if text == ""..(database:get(bot_id.."Tshak:Set:Aks:Game"..msg.chat_id_) or "").."" and not database:get(bot_id.."Tshak:Set:Aks"..msg.chat_id_) then
-if not database:get(bot_id.."Tshak:Set:Aks"..msg.chat_id_) then 
+if text == ""..(database:get(bot_id.."Evelyn:Set:Aks:Game"..msg.chat_id_) or "").."" and not database:get(bot_id.."Evelyn:Set:Aks"..msg.chat_id_) then
+if not database:get(bot_id.."Evelyn:Set:Aks"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,"🎁┇الف مبروك لقد فزت \n♻┇للعب مره اخره ارسل ~{ العكس }")
-database:incrby(bot_id.."Tshak:Add:Num"..msg.chat_id_..msg.sender_user_id_, 1)  
+database:incrby(bot_id.."Evelyn:Add:Num"..msg.chat_id_..msg.sender_user_id_, 1)  
 end
-database:set(bot_id.."Tshak:Set:Aks"..msg.chat_id_,true)
+database:set(bot_id.."Evelyn:Set:Aks"..msg.chat_id_,true)
 end 
 
-if database:get(bot_id.."Tshak:GAME:TKMEN" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then  
+if database:get(bot_id.."Evelyn:GAME:TKMEN" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then  
 if text and text:match("^(%d+)$") then
 local NUM = text:match("^(%d+)$")
 if tonumber(NUM) > 20 then
 send(msg.chat_id_, msg.id_,"📬┇عذرآ لا يمكنك تخمين عدد اكبر من ال { 20 } خمن رقم ما بين ال{ 1 و 20 }\n")
 return false  end 
-local GETNUM = database:get(bot_id.."Tshak:GAMES:NUM"..msg.chat_id_)
+local GETNUM = database:get(bot_id.."Evelyn:GAMES:NUM"..msg.chat_id_)
 if tonumber(NUM) == tonumber(GETNUM) then
-database:del(bot_id.."Tshak:SADD:NUM"..msg.chat_id_..msg.sender_user_id_)
-database:del(bot_id.."Tshak:GAME:TKMEN" .. msg.chat_id_ .. "" .. msg.sender_user_id_)   
-database:incrby(bot_id.."Tshak:Add:Num"..msg.chat_id_..msg.sender_user_id_,5)  
+database:del(bot_id.."Evelyn:SADD:NUM"..msg.chat_id_..msg.sender_user_id_)
+database:del(bot_id.."Evelyn:GAME:TKMEN" .. msg.chat_id_ .. "" .. msg.sender_user_id_)   
+database:incrby(bot_id.."Evelyn:Add:Num"..msg.chat_id_..msg.sender_user_id_,5)  
 send(msg.chat_id_, msg.id_,"🔖┇مبروك فزت ويانه وخمنت الرقم الصحيح\n🚸┇تم اضافة { 5 } من النقاط \n")
 elseif tonumber(NUM) ~= tonumber(GETNUM) then
-database:incrby(bot_id.."Tshak:SADD:NUM"..msg.chat_id_..msg.sender_user_id_,1)
-if tonumber(database:get(bot_id.."Tshak:SADD:NUM"..msg.chat_id_..msg.sender_user_id_)) >= 3 then
-database:del(bot_id.."Tshak:SADD:NUM"..msg.chat_id_..msg.sender_user_id_)
-database:del(bot_id.."Tshak:GAME:TKMEN" .. msg.chat_id_ .. "" .. msg.sender_user_id_)   
+database:incrby(bot_id.."Evelyn:SADD:NUM"..msg.chat_id_..msg.sender_user_id_,1)
+if tonumber(database:get(bot_id.."Evelyn:SADD:NUM"..msg.chat_id_..msg.sender_user_id_)) >= 3 then
+database:del(bot_id.."Evelyn:SADD:NUM"..msg.chat_id_..msg.sender_user_id_)
+database:del(bot_id.."Evelyn:GAME:TKMEN" .. msg.chat_id_ .. "" .. msg.sender_user_id_)   
 send(msg.chat_id_, msg.id_,"📮┇اوبس لقد خسرت في اللعبه \n📬┇حظآ اوفر في المره القادمه \n🔰┇كان الرقم الذي تم تخمينه { "..GETNUM.." }")
 else
 send(msg.chat_id_, msg.id_,"📛┇اوبس تخمينك غلط \n📌┇ارسل رقم تخمنه مره اخرى ")
@@ -5364,37 +5366,37 @@ end
 end
 end
 if text == "خمن" or text == "تخمين" then   
-if database:get(bot_id.."Tshak:Lock:Games"..msg.chat_id_) then
+if database:get(bot_id.."Evelyn:Lock:Games"..msg.chat_id_) then
 Num = math.random(1,20)
-database:set(bot_id.."Tshak:GAMES:NUM"..msg.chat_id_,Num) 
+database:set(bot_id.."Evelyn:GAMES:NUM"..msg.chat_id_,Num) 
 send(msg.chat_id_, msg.id_,"\n📛┇اهلا بك عزيزي في لعبة التخمين :\nٴ━━━━━━━━━━\n".."💢┇ملاحظه لديك { 3 } محاولات فقط فكر قبل ارسال تخمينك \n\n".."🔖┇سيتم تخمين عدد ما بين ال {1 و 20} اذا تعتقد انك تستطيع الفوز جرب واللعب الان ؟ ")
-database:setex(bot_id.."Tshak:GAME:TKMEN" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 100, true)  
+database:setex(bot_id.."Evelyn:GAME:TKMEN" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 100, true)  
 return false  
 end
 end
 
-if database:get(bot_id.."Tshak:SET:GAME" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then  
+if database:get(bot_id.."Evelyn:SET:GAME" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then  
 if text and text:match("^(%d+)$") then
 local NUM = text:match("^(%d+)$")
 if tonumber(NUM) > 6 then
 send(msg.chat_id_, msg.id_,"📬┇عذرا لا يوجد سواء { 6 } اختيارات فقط ارسل اختيارك مره اخرى\n")
 return false  end 
-local GETNUM = database:get(bot_id.."Tshak:Games:Bat"..msg.chat_id_)
+local GETNUM = database:get(bot_id.."Evelyn:Games:Bat"..msg.chat_id_)
 if tonumber(NUM) == tonumber(GETNUM) then
-database:del(bot_id.."Tshak:SET:GAME" .. msg.chat_id_ .. "" .. msg.sender_user_id_)   
+database:del(bot_id.."Evelyn:SET:GAME" .. msg.chat_id_ .. "" .. msg.sender_user_id_)   
 send(msg.chat_id_, msg.id_,"📮┇مبروك فزت وطلعت المحيبس بل ايد رقم { "..NUM.." }\n🎊┇لقد حصلت على { 3 }من نقاط يمكنك استبدالهن برسائل ")
-database:incrby(bot_id.."Tshak:Add:Num"..msg.chat_id_..msg.sender_user_id_,3)  
+database:incrby(bot_id.."Evelyn:Add:Num"..msg.chat_id_..msg.sender_user_id_,3)  
 elseif tonumber(NUM) ~= tonumber(GETNUM) then
-database:del(bot_id.."Tshak:SET:GAME" .. msg.chat_id_ .. "" .. msg.sender_user_id_)   
+database:del(bot_id.."Evelyn:SET:GAME" .. msg.chat_id_ .. "" .. msg.sender_user_id_)   
 send(msg.chat_id_, msg.id_,"📮┇للاسف لقد خسرت \n📬┇المحيبس بل ايد رقم { "..GETNUM.." }\n💥┇حاول مره اخرى للعثور على المحيبس")
 end
 end
 end
 
 if text == "محيبس" or text == "بات" then
-if database:get(bot_id.."Tshak:Lock:Games"..msg.chat_id_) then   
+if database:get(bot_id.."Evelyn:Lock:Games"..msg.chat_id_) then   
 Num = math.random(1,6)
-database:set(bot_id.."Tshak:Games:Bat"..msg.chat_id_,Num) 
+database:set(bot_id.."Evelyn:Games:Bat"..msg.chat_id_,Num) 
 TEST = [[
 *➀       ➁     ➂      ➃      ➄     ➅
 ↓      ↓     ↓      ↓     ↓     ↓
@@ -5403,17 +5405,17 @@ TEST = [[
 🎁┇الفائز يحصل على { 3 } من النقاط *
 ]]
 send(msg.chat_id_, msg.id_,TEST)
-database:setex(bot_id.."Tshak:SET:GAME" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 100, true)  
+database:setex(bot_id.."Evelyn:SET:GAME" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 100, true)  
 return false  
 end
 end
 
 if text == "المختلف" then
-if database:get(bot_id.."Tshak:Lock:Games"..msg.chat_id_) then
+if database:get(bot_id.."Evelyn:Lock:Games"..msg.chat_id_) then
 mktlf = {"😸","☠","🐼","🐇","🌑","🌚","⭐️","✨","⛈","🌥","⛄️","👨‍🔬","👨‍💻","👨‍🔧","🧚‍♀","🧜‍♂","🧝‍♂","🙍‍♂","🧖‍♂","👬","🕒","🕤","⌛️","📅",};
 name = mktlf[math.random(#mktlf)]
-database:del(bot_id.."Tshak:Set:Moktlf:Bot"..msg.chat_id_)
-database:set(bot_id.."Tshak::Set:Moktlf"..msg.chat_id_,name)
+database:del(bot_id.."Evelyn:Set:Moktlf:Bot"..msg.chat_id_)
+database:set(bot_id.."Evelyn::Set:Moktlf"..msg.chat_id_,name)
 name = string.gsub(name,"😸","????😹😹😹😹😹😹😸😹😹😹😹")
 name = string.gsub(name,"☠","💀💀💀💀💀💀💀☠💀💀💀💀💀")
 name = string.gsub(name,"🐼","👻👻👻🐼👻👻👻👻👻👻👻")
@@ -5444,20 +5446,20 @@ send(msg.chat_id_, msg.id_,"🔰┇اسرع واحد يدز الاختلاف ~ {
 return false
 end
 end
-if text == ""..(database:get(bot_id.."Tshak::Set:Moktlf"..msg.chat_id_) or "").."" then 
-if not database:get(bot_id.."Tshak:Set:Moktlf:Bot"..msg.chat_id_) then 
-database:del(bot_id.."Tshak::Set:Moktlf"..msg.chat_id_)
+if text == ""..(database:get(bot_id.."Evelyn::Set:Moktlf"..msg.chat_id_) or "").."" then 
+if not database:get(bot_id.."Evelyn:Set:Moktlf:Bot"..msg.chat_id_) then 
+database:del(bot_id.."Evelyn::Set:Moktlf"..msg.chat_id_)
 send(msg.chat_id_, msg.id_,"🎁┇الف مبروك لقد فزت \n♻┇للعب مره اخره ارسل ~{ المختلف }")
-database:incrby(bot_id.."Tshak:Add:Num"..msg.chat_id_..msg.sender_user_id_, 1)  
+database:incrby(bot_id.."Evelyn:Add:Num"..msg.chat_id_..msg.sender_user_id_, 1)  
 end
-database:set(bot_id.."Tshak:Set:Moktlf:Bot"..msg.chat_id_,true)
+database:set(bot_id.."Evelyn:Set:Moktlf:Bot"..msg.chat_id_,true)
 end
 if text == "امثله" then
-if database:get(bot_id.."Tshak:Lock:Games"..msg.chat_id_) then
+if database:get(bot_id.."Evelyn:Lock:Games"..msg.chat_id_) then
 mthal = {"جوز","ضراطه","الحبل","الحافي","شقره","بيدك","سلايه","النخله","الخيل","حداد","المبلل","يركص","قرد","العنب","العمه","الخبز","بالحصاد","شهر","شكه","يكحله",};
 name = mthal[math.random(#mthal)]
-database:set(bot_id.."Tshak:Set:Amth"..msg.chat_id_,name)
-database:del(bot_id.."Tshak:Set:Amth:Bot"..msg.chat_id_)
+database:set(bot_id.."Evelyn:Set:Amth"..msg.chat_id_,name)
+database:del(bot_id.."Evelyn:Set:Amth:Bot"..msg.chat_id_)
 name = string.gsub(name,"جوز","ينطي____للماعده سنون")
 name = string.gsub(name,"ضراطه","الي يسوق المطي يتحمل___")
 name = string.gsub(name,"بيدك","اكل___محد يفيدك")
@@ -5482,20 +5484,20 @@ send(msg.chat_id_, msg.id_,"🔰┇اسرع واحد يكمل المثل ~ {"..n
 return false
 end
 end
-if text == ""..(database:get(bot_id.."Tshak:Set:Amth"..msg.chat_id_) or "").."" then 
-if not database:get(bot_id.."Tshak:Set:Amth:Bot"..msg.chat_id_) then 
-database:del(bot_id.."Tshak:Set:Amth"..msg.chat_id_)
+if text == ""..(database:get(bot_id.."Evelyn:Set:Amth"..msg.chat_id_) or "").."" then 
+if not database:get(bot_id.."Evelyn:Set:Amth:Bot"..msg.chat_id_) then 
+database:del(bot_id.."Evelyn:Set:Amth"..msg.chat_id_)
 send(msg.chat_id_, msg.id_,"🎁┇الف مبروك لقد فزت \n♻┇للعب مره اخره ارسل ~{ امثله }")
-database:incrby(bot_id.."Tshak:Add:Num"..msg.chat_id_..msg.sender_user_id_, 1)  
+database:incrby(bot_id.."Evelyn:Add:Num"..msg.chat_id_..msg.sender_user_id_, 1)  
 end
-database:set(bot_id.."Tshak:Set:Amth:Bot"..msg.chat_id_,true)
+database:set(bot_id.."Evelyn:Set:Amth:Bot"..msg.chat_id_,true)
 end
 if text == "تعطيل الالعاب" and Owner(msg) then   
-database:del(bot_id.."Tshak:Lock:Games"..msg.chat_id_) 
+database:del(bot_id.."Evelyn:Lock:Games"..msg.chat_id_) 
 send(msg.chat_id_, msg.id_,"\n☑┇تم تعطيل الالعاب") 
 end
 if text == "تفعيل الالعاب" and Owner(msg) then  
-database:set(bot_id.."Tshak:Lock:Games"..msg.chat_id_,true) 
+database:set(bot_id.."Evelyn:Lock:Games"..msg.chat_id_,true) 
 send(msg.chat_id_, msg.id_,"\n☑┇تم تفعيل الالعاب") 
 end
 if text == 'الالعاب' then
@@ -5549,7 +5551,7 @@ send(msg.chat_id_, msg.id_,Text)
 end
 
 if text == "مجوهراتي" then 
-local Num = database:get(bot_id.."Tshak:Add:Num"..msg.chat_id_..msg.sender_user_id_) or 0
+local Num = database:get(bot_id.."Evelyn:Add:Num"..msg.chat_id_..msg.sender_user_id_) or 0
 if Num == 0 then 
 Text = "📫┇لم تلعب اي لعبه للحصول على جواهر"
 else
@@ -5563,16 +5565,16 @@ if tonumber(NUMPY) == tonumber(0) then
 send(msg.chat_id_,msg.id_,"\n*📮┇لا استطيع البيع اقل من 1 *") 
 return false 
 end
-if tonumber(database:get(bot_id.."Tshak:Add:Num"..msg.chat_id_..msg.sender_user_id_)) == tonumber(0) then
+if tonumber(database:get(bot_id.."Evelyn:Add:Num"..msg.chat_id_..msg.sender_user_id_)) == tonumber(0) then
 send(msg.chat_id_,msg.id_,"🔖┇ليس لديك جواهر من الالعاب \n📬┇اذا كنت تريد ربح الجواهر \n📌┇ارسل الالعاب وابدأ اللعب ! ") 
 else
-local NUM_GAMES = database:get(bot_id.."Tshak:Add:Num"..msg.chat_id_..msg.sender_user_id_)
+local NUM_GAMES = database:get(bot_id.."Evelyn:Add:Num"..msg.chat_id_..msg.sender_user_id_)
 if tonumber(NUMPY) > tonumber(NUM_GAMES) then
 send(msg.chat_id_,msg.id_,"\n💢┇ليس لديك جواهر بهاذا العدد \n📬┇لزيادة مجوهراتك في اللعبه \n📌┇ارسل الالعاب وابدأ اللعب !") 
 return false 
 end
 local NUMNKO = (NUMPY * 50)
-database:decrby(bot_id.."Tshak:Add:Num"..msg.chat_id_..msg.sender_user_id_,NUMPY)  
+database:decrby(bot_id.."Evelyn:Add:Num"..msg.chat_id_..msg.sender_user_id_,NUMPY)  
 database:incrby(bot_id.."Evelyn:messageUser"..msg.chat_id_..":"..msg.sender_user_id_,NUMNKO)  
 send(msg.chat_id_,msg.id_,"☑┇تم خصم *~ { "..NUMPY.." }* من مجوهراتك \n📨┇وتم اضافة* ~ { "..(NUMPY * 50).." } رساله الى رسالك *")
 end 
@@ -5581,52 +5583,52 @@ end
 if text ==("مسح") and Addictive(msg) and tonumber(msg.reply_to_message_id_) > 0 then
 DeleteMessage(msg.chat_id_,{[0] = tonumber(msg.reply_to_message_id_),msg.id_})   
 end   
-if database:get(bot_id.."Tshak:numadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then 
+if database:get(bot_id.."Evelyn:numadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then 
 if text and text:match("^الغاء$") then 
-database:del(bot_id.."Tshak:id:user"..msg.chat_id_)  
+database:del(bot_id.."Evelyn:id:user"..msg.chat_id_)  
 send(msg.chat_id_, msg.id_, "📮┇تم الغاء الامر ") 
-database:del(bot_id.."Tshak:numadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
+database:del(bot_id.."Evelyn:numadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
 return false  
 end 
-database:del(bot_id.."Tshak:numadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
+database:del(bot_id.."Evelyn:numadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
 local numadded = string.match(text, "(%d+)") 
-local iduserr = database:get(bot_id.."Tshak:id:user"..msg.chat_id_)  
-database:del(bot_id.."Tshak:Msg_User"..msg.chat_id_..":"..msg.sender_user_id_) 
+local iduserr = database:get(bot_id.."Evelyn:id:user"..msg.chat_id_)  
+database:del(bot_id.."Evelyn:Msg_User"..msg.chat_id_..":"..msg.sender_user_id_) 
 database:incrby(bot_id.."Evelyn:messageUser"..msg.chat_id_..":"..iduserr,numadded)  
 send(msg.chat_id_, msg.id_,"☑┇تم اضافة له {"..numadded.."} من الرسائل")  
 end
-if database:get(bot_id.."Tshak:gemadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then 
+if database:get(bot_id.."Evelyn:gemadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then 
 if text and text:match("^الغاء$") then 
-database:del(bot_id.."Tshak:idgem:user"..msg.chat_id_)  
+database:del(bot_id.."Evelyn:idgem:user"..msg.chat_id_)  
 send(msg.chat_id_, msg.id_, "☑┇تم الغاء الامر ") 
-database:del(bot_id.."Tshak:gemadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
+database:del(bot_id.."Evelyn:gemadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
 return false  
 end 
-database:del(bot_id.."Tshak:gemadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
+database:del(bot_id.."Evelyn:gemadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
 local numadded = string.match(text, "(%d+)") 
-local iduserr = database:get(bot_id.."Tshak:idgem:user"..msg.chat_id_)  
-database:incrby(bot_id.."Tshak:Add:Num"..msg.chat_id_..iduserr,numadded)  
+local iduserr = database:get(bot_id.."Evelyn:idgem:user"..msg.chat_id_)  
+database:incrby(bot_id.."Evelyn:Add:Num"..msg.chat_id_..iduserr,numadded)  
 send(msg.chat_id_, msg.id_,"☑┇تم اضافة له {"..numadded.."} من المجوهرات")  
 end
 ------------------------------------------------------------
 if text and text:match("^اضف رسائل (%d+)$") and msg.reply_to_message_id_ == 0 and Constructor(msg) then    
 taha = text:match("^اضف رسائل (%d+)$")
-database:set(bot_id.."Tshak:id:user"..msg.chat_id_,taha)  
-database:setex(bot_id.."Tshak:numadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 120, true)  
+database:set(bot_id.."Evelyn:id:user"..msg.chat_id_,taha)  
+database:setex(bot_id.."Evelyn:numadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 120, true)  
 send(msg.chat_id_, msg.id_, "✉┇ارسل لي عدد الرسائل الان") 
 return false
 end
 if text and text:match("^اضف مجوهرات (%d+)$") and msg.reply_to_message_id_ == 0 and Constructor(msg) then  
 taha = text:match("^اضف مجوهرات (%d+)$")
-database:set(bot_id.."Tshak:idgem:user"..msg.chat_id_,taha)  
-database:setex(bot_id.."Tshak:gemadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 120, true)  
+database:set(bot_id.."Evelyn:idgem:user"..msg.chat_id_,taha)  
+database:setex(bot_id.."Evelyn:gemadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 120, true)  
 send(msg.chat_id_, msg.id_, "💠┇ارسل لي عدد المجوهرات الان") 
 return false
 end
 if text and text:match("^اضف مجوهرات (%d+)$") and msg.reply_to_message_id_ ~= 0 and Constructor(msg) then
 local Num = text:match("^اضف مجوهرات (%d+)$")
 function reply(extra, result, success)
-database:incrby(bot_id.."Tshak:Add:Num"..msg.chat_id_..result.sender_user_id_,Num)  
+database:incrby(bot_id.."Evelyn:Add:Num"..msg.chat_id_..result.sender_user_id_,Num)  
 send(msg.chat_id_, msg.id_,"☑┇تم اضافة له {"..Num.."} من المجوهرات")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_=msg.chat_id_,message_id_=tonumber(msg.reply_to_message_id_)},reply, nil)
@@ -5635,7 +5637,7 @@ end
 if text and text:match("^اضف رسائل (%d+)$") and msg.reply_to_message_id_ ~= 0 and Constructor(msg) then
 local Num = text:match("^اضف رسائل (%d+)$")
 function reply(extra, result, success)
-database:del(bot_id.."Tshak:Msg_User"..msg.chat_id_..":"..result.sender_user_id_) 
+database:del(bot_id.."Evelyn:Msg_User"..msg.chat_id_..":"..result.sender_user_id_) 
 database:incrby(bot_id.."Evelyn:messageUser"..msg.chat_id_..":"..result.sender_user_id_,Num)  
 send(msg.chat_id_, msg.id_, "\n☑┇تم اضافة له {"..Num.."} من الرسائل")  
 end
