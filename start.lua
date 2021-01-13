@@ -80,7 +80,6 @@ done
 RunEvelyn:close()
 local RunTs = io.open("ts", 'w')
 RunTs:write([[
-#!/usr/bin/env bash
 cd $HOME/Evelyn
 while(true) do
 rm -fr ../.telegram-cli
