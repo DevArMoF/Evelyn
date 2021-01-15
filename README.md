@@ -8,7 +8,7 @@ Installation
 
 install :
 
-``` git clone https://github.com/VvVvFv/Evelyn && cd Evelyn && chmod +x install.sh && ./install.sh ```
+``` git clone https://github.com/DevArMoF/Evelyn && cd Evelyn && chmod +x install.sh && ./install.sh ```
 
 ______________________________________________________________________________________________________________________
 
