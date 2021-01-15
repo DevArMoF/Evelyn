@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-cd $HOME/Evelyn
 install() {
 rm -rf $HOME/.telegram-cli
 sudo chmod +x tg
