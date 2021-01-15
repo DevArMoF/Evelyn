@@ -15,16 +15,7 @@ List_Sudos = {Id_Sudo,296369326}
 print("\27[34m"..[[
 
 >> Best Source in Telegram
->> Features fast and powerful
-
-__         __                                   __                           
-|  |        |   |          _________       |    |                          ________         ___                ___
-|  |        |   |          |   ______|        |    |                         |    _ ___ |        |         \         /     /
-|  ———    |          |  | _____          |    |                         |  |______        |    |\    \      /     /
-|  ———    |          |  | ______|       |    |                         |   ______|       |    |   \    \       /
-|  |         |   |         |   |______         |    |________          |   |_____         |    |     \        /
-|  |         |   |         |________|         |__________|          |_______|        |__|        \__/
-__         __
+__
 
 ]].."\27[m")
 
@@ -364,7 +355,7 @@ ID="InputMessageAudio",
 audio_ = GetInputFile(audio),
 duration_ = "",
 title_ = title or "",
-performer_ = "سورس هيلين الرسمي",
+performer_ = "سورس EVELYN الرسمي",
 caption_ = caption or ""
 }},func or dl_cb,nil)
 end
