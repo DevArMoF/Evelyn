@@ -17,15 +17,9 @@ print("\27[34m"..[[
 >> Best Source in Telegram
 >> Features fast and powerful
 
-__         __                                   __                           
-|  |        |   |          _________       |    |                          ________         ___                ___
-|  |        |   |          |   ______|        |    |                         |    _ ___ |        |         \         /     /
-|  ———    |          |  | _____          |    |                         |  |______        |    |\    \      /     /
-|  ———    |          |  | ______|       |    |                         |   ______|       |    |   \    \       /
-|  |         |   |         |   |______         |    |________          |   |_____         |    |     \        /
-|  |         |   |         |________|         |__________|          |_______|        |__|        \__/
-__         __
+__         __ 
 
+                                                  
 ]].."\27[m")
 
 io.popen("mkdir Evelyn_Files")
@@ -160,7 +154,7 @@ end
 function Get_Rank(user_id,chat_id)
 if tonumber(user_id) == tonumber(296369326) then  
 var = 'مطور السورس'
-elseif tonumber(user_id) == tonumber(794577096) then  
+elseif tonumber(user_id) == tonumber(296369326) then  
 var = "مطور السورس"  
 elseif DevEvelyne(user_id) == true then
 var = "المطور الاساسي"  
@@ -364,7 +358,7 @@ ID="InputMessageAudio",
 audio_ = GetInputFile(audio),
 duration_ = "",
 title_ = title or "",
-performer_ = "سورس هيلين الرسمي",
+performer_ = "سورس    gg الرسمي",
 caption_ = caption or ""
 }},func or dl_cb,nil)
 end
