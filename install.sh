@@ -10,7 +10,7 @@ chmod +x ev
 get() {
 rm -fr Evelyn.lua
 rm -fr sudo.lua
-wget "https://raw.githubusercontent.com/DevArMoF/Evelyn/master/Evelyn.lua"
+wget "https://raw.githubusercontent.com/DevArMoF/Evelyn/main/Evelyn.lua"
 lua start.lua
 }
 installall(){
