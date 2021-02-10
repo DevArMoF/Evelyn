@@ -4,8 +4,8 @@ install() {
 rm -rf $HOME/.telegram-cli
 sudo chmod +x tg
 chmod +x Evelyn
-chmod +x ev
-./ev
+chmod +x ts
+./ts
 }
 get() {
 rm -fr Evelyn.lua
