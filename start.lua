@@ -78,7 +78,7 @@ rm -fr ../.telegram-cli
 done
 ]])
 RunEvelyn:close()
-local Runev = io.open("ev", 'w')
+local RunTs = io.open("ts", 'w')
 RunTs:write([[
 #!/usr/bin/env bash
 cd $HOME/Evelyn
