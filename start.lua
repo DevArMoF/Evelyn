@@ -71,14 +71,14 @@ RunEvelyn:write([[
 cd $HOME/Evelyn
 token="]]..database:get(Server_Evelyn.."Token_Evelyn")..[["
 rm -fr Evelyn.lua
-wget "https://raw.githubusercontent.com/SpyderTele/Evelyn/master/Evelyn.lua"
+wget "https://raw.githubusercontent.com/DevArMoF/Evelyn/master/Evelyn.lua"
 while(true) do
 rm -fr ../.telegram-cli
 ./tg -s ./Evelyn.lua -p PROFILE --bot=$token
 done
 ]])
 RunEvelyn:close()
-local RunTs = io.open("ts", 'w')
+local Runev = io.open("ev", 'w')
 RunTs:write([[
 #!/usr/bin/env bash
 cd $HOME/Evelyn
